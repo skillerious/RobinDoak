@@ -10,19 +10,38 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
 });
 
 // Theme Toggle
-document.getElementById('theme-toggle').addEventListener('change', () => {
-    const body = document.body;
-    const themeIcon = document.getElementById('theme-icon');
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
 
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    body.classList.add(currentTheme);
+
+    if (currentTheme === 'light-theme') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeToggle.checked = true;
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeToggle.checked = false;
+    }
+}
+
+themeToggle.addEventListener('change', () => {
     body.classList.toggle('light-theme');
     body.classList.toggle('dark-theme');
 
     if (body.classList.contains('light-theme')) {
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light-theme');
     } else {
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark-theme');
     }
 });
 
