@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-theme">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
         <div class="container">
@@ -29,8 +29,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#software">Software</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="software.html">Software</a></li>
                     <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -45,48 +45,12 @@
         </div>
     </nav>
 
-    <!-- Header Carousel -->
-    <header id="home" class="vh-100 position-relative">
-        <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner h-100">
-                <div class="carousel-item active h-100">
-                    <img src="images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg" class="d-block w-100 h-100" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1 class="display-3 professional-text">Innovative Software Solutions</h1>
-                        <h2 class="lead professional-subtext">Crafting Code, Building Futures</h2>
-                        <a href="#about" class="btn btn-primary mt-4">Discover More</a>
-                    </div>
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="images/maxim-hopman-IayKLkmz6g0-unsplash.jpg" class="d-block w-100 h-100" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1 class="display-3 professional-text">Creating Future</h1>
-                        <h2 class="lead professional-subtext">Innovating the Tech World</h2>
-                        <a href="#software" class="btn btn-primary mt-4">My Work</a>
-                    </div>
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="images/carlos-muza-hpjSkU2UYSU-unsplash.jpg" class="d-block w-100 h-100" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1 class="display-3 professional-text">Join My Journey</h1>
-                        <h2 class="lead professional-subtext">From Enthusiast to Expert</h2>
-                        <a href="contact.html" class="btn btn-primary mt-4">Get in Touch</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <header id="home" class="vh-100 d-flex align-items-center justify-content-center text-center bg-dark position-relative">
+        <div class="overlay position-absolute w-100 h-100"></div>
+        <div class="text-white content">
+            <h1 class="display-3 professional-text">Innovative Software Solutions</h1>
+            <h2 class="lead professional-subtext">Crafting Code, Building Futures</h2>
+            <a href="#about" class="btn btn-primary mt-4">Discover More</a>
         </div>
     </header>
 
@@ -99,7 +63,7 @@
                     <p class="card-text">From a young age, I was captivated by the world of technology, spending countless hours understanding how different software works. This hands-on approach allowed me to develop a deep understanding and appreciation for the intricacies of software design and development.</p>
                     <p class="card-text">Throughout my self-taught journey, I have worked on numerous projects, ranging from personal endeavors to collaborations with other tech enthusiasts. Each project has been an opportunity to learn, grow, and push the boundaries of my capabilities.</p>
                     <p class="card-text">When I'm not coding, I love exploring the beautiful landscapes of Northern Ireland, indulging in photography, and experimenting with new technologies. I'm always excited to take on new challenges and collaborate on innovative projects that can make a positive impact.</p>
-                    <p class="card-text">Thank you for visiting my portfolio. Feel free to explore my work and reach out if you'd like to connect or discuss potential collaborations.</p>
+                    <p class="card-text">Thank you for visiting my site. Feel free to explore my work and reach out if you'd like to connect or discuss potential collaborations.</p>
                 </div>
             </div>
         </section>
@@ -140,12 +104,13 @@
             </div>
         </section>
 
+        <!-- Software Section -->
         <section id="software" class="my-5">
-            <h1>Software</h1>
-            <p>Check out the software projects I have worked on.</p>
+            <h1 class="display-4 text-center text-white">Software</h1>
+            <p class="lead text-center text-white">Explore the software projects I have worked on</p>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card bg-dark text-white h-100">
                         <img src="images/farzad-p-xSl33Wxyc-unsplash.jpg" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">Project 1</h5>
@@ -154,12 +119,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card bg-dark text-white h-100">
                         <img src="images/carlos-muza-hpjSkU2UYSU-unsplash.jpg" class="card-img-top" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title">Project 2</h5>
                             <p class="card-text">Description of project 2</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card bg-dark text-white h-100">
+                        <img src="images/maxim-hopman-IayKLkmz6g0-unsplash.jpg" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">Description of project 3</p>
                             <a href="#" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
@@ -169,8 +144,19 @@
         </section>
     </main>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Robin Doak. All rights reserved.</p>
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p>&copy; 2024 Robin Doak. All rights reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a class="text-light" href="login.html">Login</a></li>
+                <li class="list-inline-item"><a class="text-light" href="index.html#home">Home</a></li>
+                <li class="list-inline-item"><a class="text-light" href="index.html#about">About</a></li>
+                <li class="list-inline-item"><a class="text-light" href="software.html">Software</a></li>
+                <li class="list-inline-item"><a class="text-light" href="downloads.html">Downloads</a></li>
+                <li class="list-inline-item"><a class="text-light" href="blog.html">Blog</a></li>
+                <li class="list-inline-item"><a class="text-light" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
