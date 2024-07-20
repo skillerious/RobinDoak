@@ -24,6 +24,21 @@ body {
     color: #000000 !important;
 }
 
+.light-theme .list-group-item-dark {
+    background-color: #f8f9fa;
+    color: #121212;
+}
+
+.light-theme .list-group-item-dark .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.light-theme .list-group-item-dark .btn-primary:hover {
+    background-color: #00d2ff;
+    border-color: #00d2ff;
+}
+
 .navbar {
     transition: background 0.3s ease;
 }
