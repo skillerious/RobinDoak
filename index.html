@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robin Doak - Portfolio</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV4VagO3bH5YtZbLkl9u0ewFD6xT+UL9XrC5Xz0QqEdxV1YmJYEuFciQdpJiOn8ofHPDfkFMDYFDQ4G8ngYwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to Top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Robin Doak</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="nav-link">About <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#skills" class="dropdown-link">Skills</a></li>
+                        <li><a href="#experience" class="dropdown-link">Experience</a></li>
+                    </ul>
+                </li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Search Bar (Optional) -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." aria-label="Search">
+                <i class="fas fa-search"></i>
+            </div>
+            <!-- Theme Toggle (Option A: Checkbox) -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="toggle-checkbox" aria-label="Toggle Dark/Light Theme">
+                <label for="toggle-checkbox" class="toggle-label">
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
+            <!-- Alternatively, Theme Toggle Button (Option B: Button) -->
+            <!--
+            <div class="theme-toggle">
+                <button id="theme-toggle-button" aria-label="Toggle Dark/Light Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            -->
+            <!-- Hamburger Menu -->
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="container">
+            <div class="home-content" data-aos="fade-up">
+                <h1>Hi, I'm <span>Robin Doak</span></h1>
+                <p>I'm a <span class="highlight">Software Developer</span> passionate about creating impactful digital experiences.</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 data-aos="fade-right">About Me</h2>
+            <div class="about-content" data-aos="fade-up">
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="Robin Doak">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Robin Doak, a dedicated Software Developer with a passion for building efficient and scalable applications. With a strong foundation in web development and a keen eye for detail, I strive to deliver solutions that not only meet but exceed expectations.</p>
+                    
+                    <h3>Highlighted Projects</h3>
+                    <ul class="highlighted-projects">
+                        <li>
+                            <strong>Markiva</strong>: An innovative project management tool designed to streamline workflows and enhance team collaboration. [<a href="https://github.com/skillerious/Markiva" target="_blank">GitHub</a>]
+                        </li>
+                        <li>
+                            <strong>GitHub Follower Checker</strong>: A tool to monitor and track GitHub followers, providing insights and analytics on follower growth. [<a href="https://github.com/skillerious/Github-Follower-Tracker" target="_blank">GitHub</a>]
+                        </li>
+                        <li>
+                            <strong>Starfield IDDB</strong>: A comprehensive database for tracking and managing in-game items and achievements in the game Starfield. [<a href="https://github.com/skillerious/Starfield-IDDB" target="_blank">GitHub</a>]
+                        </li>
+                    </ul>
+
+                    <div class="skills">
+                        <h3>My Skills</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> JavaScript & TypeScript</li>
+                            <li><i class="fas fa-check-circle"></i> React & Vue.js</li>
+                            <li><i class="fas fa-check-circle"></i> Node.js & Express</li>
+                            <li><i class="fas fa-check-circle"></i> Python & Django</li>
+                            <li><i class="fas fa-check-circle"></i> Git & GitHub</li>
+                            <!-- Add more skills as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <h2 data-aos="fade-right">Experience</h2>
+            <div class="experience-content" data-aos="fade-up">
+                <div class="experience-item">
+                    <h3>Software Engineer</h3>
+                    <h4>Tech Solutions Inc.</h4>
+                    <p>June 2021 - Present</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Developed and maintained web applications using React and Node.js.</li>
+                        <li><i class="fas fa-check-circle"></i> Collaborated with cross-functional teams to define, design, and ship new features.</li>
+                        <li><i class="fas fa-check-circle"></i> Optimized applications for maximum speed and scalability.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Frontend Developer</h3>
+                    <h4>Creative Minds Studio</h4>
+                    <p>January 2019 - May 2021</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Designed and implemented user interfaces using Vue.js and CSS3.</li>
+                        <li><i class="fas fa-check-circle"></i> Ensured the technical feasibility of UI/UX designs.</li>
+                        <li><i class="fas fa-check-circle"></i> Collaborated with designers and backend developers to enhance usability.</li>
+                    </ul>
+                </div>
+                <!-- Add more experience items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 data-aos="fade-left">My Projects</h2>
+            <div class="projects-container">
+                <!-- Project Card 1 -->
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="images/markiva.jpg" alt="Markiva">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Markiva</h3>
+                                <p>An innovative project management tool designed to streamline workflows and enhance team collaboration.</p>
+                                <a href="https://github.com/skillerious/Markiva" target="_blank" class="btn">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="images/github-follower-checker.jpg" alt="GitHub Follower Checker">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>GitHub Follower Checker</h3>
+                                <p>A tool to monitor and track GitHub followers, providing insights and analytics on follower growth.</p>
+                                <a href="https://github.com/skillerious/Github-Follower-Tracker" target="_blank" class="btn">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="images/starfield-iddb.jpg" alt="Starfield IDDB">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Starfield IDDB</h3>
+                                <p>A comprehensive database for tracking and managing in-game items and achievements in the game Starfield.</p>
+                                <a href="https://github.com/skillerious/Starfield-IDDB" target="_blank" class="btn">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <h2 data-aos="fade-right">Testimonials</h2>
+            <div class="testimonials-container" data-aos="fade-up">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p>"Robin is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are unparalleled."</p>
+                    <h4>- Jane Smith, Project Manager</h4>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p>"Working with Robin was a pleasure. He has a deep understanding of modern web technologies and always meets deadlines."</p>
+                    <h4>- John Doe, Team Lead</h4>
+                </div>
+                <!-- Add more testimonials as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Contact Me</h2>
+            <form id="contact-form" action="https://formspree.io/f/yourformid" method="POST" data-aos="fade-up">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="_replyto" placeholder="Your Email" required>
+                </div>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+                <p id="form-message" class="form-message"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Robin Doak. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/skillerious" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/skillerious" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <!-- Add more social links as needed -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Link to JavaScript -->
+    <script src="scripts/scripts.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
+                "color": { "value": "#ffffff" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" },
+                    "polygon": { "nb_sides": 5 }
+                },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 400, "line_linked": { "opacity": 1 }},
+                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                    "repulse": { "distance": 200, "duration": 0.4 },
+                    "push": { "particles_nb": 4 },
+                    "remove": { "particles_nb": 2 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
