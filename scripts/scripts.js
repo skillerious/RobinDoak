@@ -1,3 +1,5 @@
+// scripts.js
+
 // Hamburger Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
@@ -80,33 +82,6 @@ toggleCheckbox.addEventListener('change', () => {
     }
 });
 
-// Alternatively, Theme Toggle Button Functionality (Option B)
-/*
-const themeToggleButton = document.getElementById('theme-toggle-button');
-
-if(localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-theme');
-    themeToggleButton.classList.add('active');
-    themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-} else {
-    document.body.classList.remove('light-theme');
-    themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-}
-
-themeToggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    if(document.body.classList.contains('light-theme')) {
-        themeToggleButton.classList.add('active');
-        themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem('theme', 'light');
-    } else {
-        themeToggleButton.classList.remove('active');
-        themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-        localStorage.setItem('theme', 'dark');
-    }
-});
-*/
-
 // Scroll-to-Top Button Functionality
 const scrollToTopBtn = document.getElementById('scroll-to-top');
 
@@ -171,4 +146,14 @@ contactForm.addEventListener('submit', function(event) {
         formMessage.style.color = "#ff4d4d";
         formMessage.style.display = "block";
     });
+});
+
+// Close the menu when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInside = hamburger.contains(event.target) || navLinks.contains(event.target);
+
+    if (!isClickInside && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+    }
 });
