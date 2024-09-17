@@ -1,21 +1,26 @@
-/* CSS Variables for Theming */
+/* ==============================================
+   CSS VARIABLES FOR THEMING
+============================================== */
 :root {
-    --primary-color: #1db954;
-    --background-color: #121212;
-    --text-color: #ffffff;
-    --secondary-color: #282828;
-    --highlight-color: #1db954;
-    --transition-speed: 0.3s;
+    --primary-color: #1db954; /* Green */
+    --background-color: #121212; /* Dark Background */
+    --text-color: #ffffff; /* White Text */
+    --secondary-color: #282828; /* Slightly Lighter Dark */
+    --highlight-color: #1db954; /* Green Highlights */
+    --transition-speed: 0.3s; /* Transition Duration */
 }
 
 /* Light Theme Overrides */
 body.light-theme {
-    --background-color: #f0f0f0;
-    --text-color: #121212;
-    --secondary-color: #e0e0e0;
-    --highlight-color: #1db954;
+    --background-color: #f0f0f0; /* Light Background */
+    --text-color: #121212; /* Dark Text */
+    --secondary-color: #e0e0e0; /* Light Secondary */
+    --highlight-color: #1db954; /* Green Highlights */
 }
 
+/* ==============================================
+   BASE STYLES
+============================================== */
 body {
     margin: 0;
     padding: 0;
@@ -28,7 +33,9 @@ body {
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
-/* Particle Background Styling */
+/* ==============================================
+   PARTICLE BACKGROUND
+============================================== */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -38,7 +45,9 @@ body {
     left: 0;
 }
 
-/* Scroll-to-Top Button */
+/* ==============================================
+   SCROLL-TO-TOP BUTTON
+============================================== */
 #scroll-to-top {
     position: fixed;
     bottom: 40px;
@@ -50,7 +59,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.2rem;
-    display: none;
+    display: none; /* Hidden by default */
     align-items: center;
     justify-content: center;
     transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
@@ -58,22 +67,24 @@ body {
 }
 
 #scroll-to-top:hover {
-    background-color: #17a44d;
-    transform: scale(1.1);
+    background-color: #17a44d; /* Darker Green on Hover */
+    transform: scale(1.1); /* Slightly Larger */
 }
 
-/* Navbar Styles */
+/* ==============================================
+   NAVBAR STYLES
+============================================== */
 .navbar {
     position: fixed;
     width: 100%;
-    background: rgba(18, 18, 18, 0.95);
+    background: rgba(18, 18, 18, 0.95); /* Semi-transparent Dark */
     padding: 1rem 0;
     z-index: 1000;
     transition: background var(--transition-speed) ease;
 }
 
 body.light-theme .navbar {
-    background: rgba(240, 240, 240, 0.95);
+    background: rgba(240, 240, 240, 0.95); /* Semi-transparent Light */
 }
 
 .navbar .container {
@@ -140,38 +151,55 @@ body.light-theme .nav-link.active {
     color: var(--primary-color);
 }
 
-/* Dropdown Menu */
+/* ==============================================
+   DROPDOWN MENU STYLES
+============================================== */
 .dropdown {
     position: relative;
 }
 
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-toggle i {
+    margin-left: 0.5rem;
+    transition: transform var(--transition-speed) ease;
+}
+
 .dropdown-menu {
     position: absolute;
-    top: 40px;
+    top: 45px; /* Adjust based on navbar height */
     left: 0;
     background: var(--secondary-color);
     list-style: none;
     padding: 0.5rem 0;
     min-width: 150px;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease, transform var(--transition-speed) ease;
     z-index: 1000;
+    transform: translateY(-10px);
 }
 
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
 }
 
 .dropdown-link {
-    display: block;
-    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
     color: var(--text-color);
     text-decoration: none;
     transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+    font-size: 1rem;
 }
 
 .dropdown-link:hover {
@@ -179,16 +207,21 @@ body.light-theme .nav-link.active {
     color: #ffffff;
 }
 
-body.light-theme .dropdown-menu {
-    background: var(--secondary-color);
+.dropdown-link::before {
+    content: '\f0da'; /* Font Awesome caret-right icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 0.5rem;
+    transition: transform var(--transition-speed) ease;
 }
 
-body.light-theme .dropdown-link:hover {
-    background: var(--primary-color);
-    color: #ffffff;
+.dropdown:hover .dropdown-link::before {
+    transform: translateX(5px);
 }
 
-/* Search Bar */
+/* ==============================================
+   SEARCH BAR STYLES
+============================================== */
 .search-bar {
     position: relative;
     margin-left: 2rem;
@@ -248,7 +281,9 @@ body.light-theme .search-bar input:focus + i {
     color: #ffffff;
 }
 
-/* Theme Toggle Styles (Option A) */
+/* ==============================================
+   THEME TOGGLE STYLES
+============================================== */
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -297,9 +332,11 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
     background: var(--background-color);
 }
 
-/* Hamburger Menu */
+/* ==============================================
+   HAMBURGER MENU STYLES
+============================================== */
 .hamburger {
-    display: none;
+    display: none; /* Hidden on Desktop */
     font-size: 1.5rem;
     color: var(--text-color);
     cursor: pointer;
@@ -307,25 +344,39 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
 }
 
 .hamburger.active .fa-bars {
-    transform: rotate(90deg);
+    transform: rotate(90deg); /* Rotate Icon when Active */
 }
 
+/* ==============================================
+   MEDIA QUERIES FOR RESPONSIVE DESIGN
+============================================== */
 @media (max-width: 768px) {
+    /* Hide Desktop Search Bar */
+    .desktop-search-bar {
+        display: none;
+    }
+
+    /* Show Hamburger Menu */
+    .hamburger {
+        display: block;
+    }
+
+    /* Adjust Navigation Links for Mobile */
     .nav-links {
         position: absolute;
         top: 70px; /* Adjust based on navbar height */
-        right: 0;
+        left: 0; /* Align to the left */
         background: var(--background-color);
         flex-direction: column;
-        width: 100%;
-        max-height: 0;
+        width: 100%; /* Full width */
+        max-height: 0; /* Hidden by default */
         overflow: hidden;
         transition: max-height var(--transition-speed) ease;
-        border-radius: 0 0 0 10px; /* Optional: Rounded corners */
+        border-radius: 0 0 0 10px; /* Rounded bottom-left corner */
     }
 
     .nav-links.open {
-        max-height: 500px; /* Adjust as needed based on content */
+        max-height: 600px; /* Expanded height */
     }
 
     .nav-links li {
@@ -333,26 +384,49 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
         text-align: center;
     }
 
-    .search-bar {
-        display: none; /* Hide search bar on mobile or reposition */
-    }
-
+    /* Ensure Dropdown Menu is Fully Visible on Mobile */
     .dropdown-menu {
         position: static;
         box-shadow: none;
-    }
-
-    .dropdown:hover .dropdown-menu {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);
     }
 
-    .hamburger {
-        display: block;
+    /* Adjust Dropdown Links for Mobile */
+    .dropdown-toggle {
+        justify-content: center;
+    }
+
+    .dropdown-menu {
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-link {
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Position Theme Toggle Appropriately */
+    .theme-toggle {
+        margin-left: 1rem;
+    }
+
+    /* Hide Search Bar on Mobile */
+    .search-bar.desktop-search-bar {
+        display: none;
     }
 }
 
-/* Sections */
+@media (min-width: 769px) {
+    /* Show Theme Toggle */
+    .theme-toggle {
+        display: flex;
+    }
+}
+
+/* ==============================================
+   SECTION STYLES
+============================================== */
 .section {
     padding: 100px 20px;
     min-height: 100vh;
@@ -367,7 +441,9 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
     margin: auto;
 }
 
-/* Home Section */
+/* ----------------------------------------------
+   HOME SECTION STYLES
+---------------------------------------------- */
 .home-section {
     display: flex;
     align-items: center;
@@ -406,12 +482,14 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
 }
 
 .btn:hover {
-    background: #17a44d;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: #17a44d; /* Darker Green on Hover */
+    transform: translateY(-3px); /* Slight Lift */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow Effect */
 }
 
-/* About Section */
+/* ----------------------------------------------
+   ABOUT SECTION STYLES
+---------------------------------------------- */
 .about-section {
     background: var(--secondary-color);
     color: var(--text-color);
@@ -422,6 +500,7 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
     margin-bottom: 2rem;
     color: var(--primary-color);
     position: relative;
+    text-align: center; /* Center the heading */
 }
 
 .about-section h2::after {
@@ -453,7 +532,7 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
 }
 
 .about-image img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight Zoom on Hover */
 }
 
 .about-text {
@@ -517,7 +596,9 @@ body.light-theme .skills ul li:hover {
     color: #ffffff;
 }
 
-/* Experience Section */
+/* ----------------------------------------------
+   EXPERIENCE SECTION STYLES
+---------------------------------------------- */
 .experience-section {
     background: var(--background-color);
     color: var(--text-color);
@@ -528,6 +609,7 @@ body.light-theme .skills ul li:hover {
     margin-bottom: 2rem;
     color: var(--primary-color);
     position: relative;
+    text-align: center; /* Center the heading */
 }
 
 .experience-section h2::after {
@@ -551,7 +633,7 @@ body.light-theme .skills ul li:hover {
     background: var(--secondary-color);
     padding: 1.5rem;
     border-radius: 10px;
-    transition: background var(--transition-speed) ease;
+    transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .experience-item:hover {
@@ -584,10 +666,13 @@ body.light-theme .skills ul li:hover {
     margin-bottom: 0.5rem;
 }
 
-/* Projects Section */
+/* ----------------------------------------------
+   PROJECTS SECTION STYLES
+---------------------------------------------- */
 .projects-section {
     background: var(--background-color);
     color: var(--text-color);
+    padding: 100px 20px;
 }
 
 .projects-section h2 {
@@ -595,6 +680,7 @@ body.light-theme .skills ul li:hover {
     margin-bottom: 2rem;
     color: var(--primary-color);
     position: relative;
+    text-align: center; /* Center the heading */
 }
 
 .projects-section h2::after {
@@ -612,6 +698,7 @@ body.light-theme .skills ul li:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    align-items: stretch; /* Ensure all project cards have equal height */
 }
 
 .project-card {
@@ -620,6 +707,8 @@ body.light-theme .skills ul li:hover {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex; /* Use flexbox to handle overlay alignment */
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -627,9 +716,19 @@ body.light-theme .skills ul li:hover {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
-.project-image img {
+.project-image {
+    position: relative;
     width: 100%;
-    height: 200px;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+}
+
+.project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform var(--transition-speed) ease;
 }
@@ -644,7 +743,7 @@ body.light-theme .skills ul li:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(29, 185, 84, 0.85);
+    background: rgba(29, 185, 84, 0.85); /* Semi-transparent Overlay */
     color: var(--text-color);
     opacity: 0;
     visibility: hidden;
@@ -654,11 +753,16 @@ body.light-theme .skills ul li:hover {
     justify-content: center;
     text-align: center;
     padding: 1rem;
+    box-sizing: border-box; /* Include padding within the overlay */
 }
 
 .project-card:hover .overlay {
     opacity: 1;
     visibility: visible;
+}
+
+.overlay-content {
+    max-width: 90%; /* Prevent text from touching the edges */
 }
 
 .overlay-content h3 {
@@ -669,6 +773,7 @@ body.light-theme .skills ul li:hover {
 .overlay-content p {
     font-size: 1rem;
     margin-bottom: 1rem;
+    word-wrap: break-word; /* Prevent long words from overflowing */
 }
 
 .overlay-content .btn {
@@ -677,34 +782,21 @@ body.light-theme .skills ul li:hover {
     color: var(--primary-color);
     border-radius: 20px;
     font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
-/* Ensure Overlay is always visible on Mobile */
-@media (max-width: 768px) {
-    .overlay {
-        opacity: 1;
-        visibility: visible;
-        background: rgba(29, 185, 84, 1);
-        padding: 0.5rem;
-    }
-
-    .overlay-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .overlay-content p {
-        font-size: 0.9rem;
-    }
-
-    .overlay-content .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
+.overlay-content .btn:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
 }
 
-/* Testimonials Section */
+/* ==============================================
+   TESTIMONIALS SECTION STYLES
+============================================== */
 .testimonials-section {
-    background: var(--secondary-color);
+    background: var(--background-color);
     color: var(--text-color);
 }
 
@@ -713,6 +805,7 @@ body.light-theme .skills ul li:hover {
     margin-bottom: 2rem;
     color: var(--primary-color);
     position: relative;
+    text-align: center;
 }
 
 .testimonials-section h2::after {
@@ -728,39 +821,37 @@ body.light-theme .skills ul li:hover {
 
 .testimonials-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 2rem;
-    justify-content: center;
 }
 
 .testimonial-card {
-    background: var(--background-color);
+    background: var(--secondary-color);
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+    transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
     background: var(--primary-color);
     color: var(--text-color);
 }
 
 .testimonial-card p {
-    font-style: italic;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
 .testimonial-card h4 {
+    font-size: 1rem;
     font-weight: 600;
-    text-align: right;
 }
 
-/* Contact Section */
+/* ==============================================
+   CONTACT SECTION STYLES
+============================================== */
 .contact-section {
-    background: var(--secondary-color);
+    background: var(--background-color);
     color: var(--text-color);
 }
 
@@ -769,6 +860,7 @@ body.light-theme .skills ul li:hover {
     margin-bottom: 2rem;
     color: var(--primary-color);
     position: relative;
+    text-align: center;
 }
 
 .contact-section h2::after {
@@ -782,82 +874,78 @@ body.light-theme .skills ul li:hover {
     transform: translateX(-50%);
 }
 
-.contact-section form {
-    background: var(--background-color);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     max-width: 600px;
-    width: 100%;
     margin: auto;
-    position: relative;
 }
 
 .form-group {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
     flex: 1;
     padding: 0.75rem;
     border: none;
     border-radius: 5px;
     background: var(--secondary-color);
     color: var(--text-color);
-    font-size: 1rem;
+    outline: none;
     transition: background var(--transition-speed) ease;
 }
 
-.form-group input::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: #bbbbbb;
 }
 
-textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    background: var(--secondary-color);
-    color: var(--text-color);
-    font-size: 1rem;
+.form-group input:focus,
+.form-group textarea:focus {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+    color: #ffffff;
+}
+
+#contact-form textarea {
     resize: vertical;
-    transition: background var(--transition-speed) ease;
-    margin-bottom: 1rem;
 }
 
-textarea::placeholder {
-    color: #bbbbbb;
-}
-
-.contact-section button {
-    width: 100%;
-    padding: 0.75rem;
+#contact-form button {
+    align-self: center;
+    padding: 0.75rem 1.5rem;
     background: var(--primary-color);
     color: var(--text-color);
     border: none;
     border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 500;
     cursor: pointer;
+    font-size: 1rem;
     transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
-.contact-section button:hover {
-    background: #17a44d;
-    transform: translateY(-3px);
+#contact-form button:hover {
+    background: #17a44d; /* Darker Green on Hover */
+    transform: translateY(-3px); /* Slight Lift */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow Effect */
 }
 
 .form-message {
-    margin-top: 1rem;
-    font-size: 1rem;
     text-align: center;
-    color: #17a44d;
-    display: none;
+    font-size: 1rem;
+    display: none; /* Hidden by default */
 }
 
-/* Footer */
+/* ==============================================
+   FOOTER STYLES
+============================================== */
 footer {
     background: var(--background-color);
     color: var(--text-color);
@@ -880,12 +968,16 @@ footer p {
     color: var(--primary-color);
 }
 
-/* Smooth Scroll */
+/* ==============================================
+   SMOOTH SCROLLING
+============================================== */
 html {
     scroll-behavior: smooth;
 }
 
-/* Scrollbar Styling (optional) */
+/* ==============================================
+   SCROLLBAR STYLING (OPTIONAL)
+============================================== */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -899,7 +991,9 @@ html {
     border-radius: 4px;
 }
 
-/* Additional Animations */
+/* ==============================================
+   ADDITIONAL ANIMATIONS AND STYLES
+============================================== */
 .section h2 {
     margin-bottom: 2rem;
     position: relative;
@@ -917,11 +1011,9 @@ html {
     transform: translateX(-50%);
 }
 
-/* Responsive Typography */
-h1, h2, h3, p {
-    max-width: 100%;
-}
-
+/* ==============================================
+   RESPONSIVE TYPOGRAPHY
+============================================== */
 .home-content h1 {
     font-size: 2.5rem;
 }
@@ -954,7 +1046,19 @@ h1, h2, h3, p {
     }
 }
 
-/* Ensure No Overflows */
-body {
-    overflow-x: hidden;
+/* ==============================================
+   GENERAL RESPONSIVENESS
+============================================== */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .dropdown-menu {
+        min-width: 100%;
+    }
+
+    .dropdown-link {
+        padding: 0.75rem 1.5rem;
+    }
 }
