@@ -297,30 +297,6 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
     background: var(--background-color);
 }
 
-/* Theme Toggle Button (Option B) */
-/*
-.theme-toggle button {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: color var(--transition-speed) ease;
-}
-
-.theme-toggle button:hover {
-    color: var(--primary-color);
-}
-
-.theme-toggle button .fa-moon {
-    transition: transform var(--transition-speed) ease;
-}
-
-.theme-toggle button.active .fa-moon {
-    transform: rotate(180deg);
-}
-*/
-
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -337,18 +313,19 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
-        top: 70px;
+        top: 70px; /* Adjust based on navbar height */
         right: 0;
         background: var(--background-color);
         flex-direction: column;
-        width: 200px;
-        height: 0;
+        width: 100%;
+        max-height: 0;
         overflow: hidden;
-        transition: height var(--transition-speed) ease;
+        transition: max-height var(--transition-speed) ease;
+        border-radius: 0 0 0 10px; /* Optional: Rounded corners */
     }
 
     .nav-links.open {
-        height: 350px; /* Adjust based on number of links and dropdowns */
+        max-height: 500px; /* Adjust as needed based on content */
     }
 
     .nav-links li {
@@ -461,13 +438,13 @@ body.light-theme #toggle-checkbox:checked + .toggle-label .toggle-ball {
 .about-content {
     display: flex;
     gap: 2rem;
-    align-items: flex-start; /* Changed to flex-start to ensure all text is visible */
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
 .about-image img {
     width: 300px;
-    height: auto; /* Changed from fixed height to auto for responsiveness */
+    height: auto; /* Responsive height */
     max-width: 100%;
     border-radius: 50%;
     border: 5px solid var(--primary-color);
@@ -633,7 +610,7 @@ body.light-theme .skills ul li:hover {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -648,10 +625,6 @@ body.light-theme .skills ul li:hover {
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
-}
-
-.project-image {
-    position: relative;
 }
 
 .project-image img {
@@ -674,7 +647,8 @@ body.light-theme .skills ul li:hover {
     background: rgba(29, 185, 84, 0.85);
     color: var(--text-color);
     opacity: 0;
-    transition: opacity var(--transition-speed) ease;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -684,6 +658,7 @@ body.light-theme .skills ul li:hover {
 
 .project-card:hover .overlay {
     opacity: 1;
+    visibility: visible;
 }
 
 .overlay-content h3 {
@@ -702,6 +677,29 @@ body.light-theme .skills ul li:hover {
     color: var(--primary-color);
     border-radius: 20px;
     font-size: 0.9rem;
+}
+
+/* Ensure Overlay is always visible on Mobile */
+@media (max-width: 768px) {
+    .overlay {
+        opacity: 1;
+        visibility: visible;
+        background: rgba(29, 185, 84, 1);
+        padding: 0.5rem;
+    }
+
+    .overlay-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .overlay-content p {
+        font-size: 0.9rem;
+    }
+
+    .overlay-content .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* Testimonials Section */
@@ -919,11 +917,6 @@ html {
     transform: translateX(-50%);
 }
 
-/* Scroll-to-Top Button */
-#scroll-to-top {
-    display: none; /* Initially hidden */
-}
-
 /* Responsive Typography */
 h1, h2, h3, p {
     max-width: 100%;
@@ -959,4 +952,9 @@ h1, h2, h3, p {
     .project-image img {
         height: 300px;
     }
+}
+
+/* Ensure No Overflows */
+body {
+    overflow-x: hidden;
 }
