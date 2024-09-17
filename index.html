@@ -58,11 +58,12 @@
             </div>
             -->
             <!-- Hamburger Menu -->
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
+    <!-- Navigation End -->
 
     <!-- Home Section -->
     <section id="home" class="section home-section">
@@ -74,6 +75,7 @@
             </div>
         </div>
     </section>
+    <!-- Home Section End -->
 
     <!-- About Section -->
     <section id="about" class="section about-section">
@@ -114,6 +116,7 @@
             </div>
         </div>
     </section>
+    <!-- About Section End -->
 
     <!-- Experience Section -->
     <section id="experience" class="section experience-section">
@@ -144,6 +147,7 @@
             </div>
         </div>
     </section>
+    <!-- Experience Section End -->
 
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
@@ -193,6 +197,7 @@
             </div>
         </div>
     </section>
+    <!-- Projects Section End -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="section testimonials-section">
@@ -213,6 +218,7 @@
             </div>
         </div>
     </section>
+    <!-- Testimonials Section End -->
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
@@ -220,15 +226,16 @@
             <h2 data-aos="fade-up">Contact Me</h2>
             <form id="contact-form" action="https://formspree.io/f/yourformid" method="POST" data-aos="fade-up">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="_replyto" placeholder="Your Email" required>
+                    <input type="text" name="name" placeholder="Your Name" required aria-required="true">
+                    <input type="email" name="_replyto" placeholder="Your Email" required aria-required="true">
                 </div>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
                 <button type="submit" class="btn">Send Message</button>
-                <p id="form-message" class="form-message"></p>
+                <p id="form-message" class="form-message" role="alert"></p>
             </form>
         </div>
     </section>
+    <!-- Contact Section End -->
 
     <!-- Footer -->
     <footer>
@@ -241,6 +248,7 @@
             </div>
         </div>
     </footer>
+    <!-- Footer End -->
 
     <!-- Scripts -->
     <!-- Particles.js -->
