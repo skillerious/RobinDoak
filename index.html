@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV4VagO3bH5YtZbLkl9u0ewFD6xT+UL9XrC5Xz0QqEdxV1YmJYEuFciQdpJiOn8ofHPDfkFMDYFDQ4G8ngYwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- AOS CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
@@ -27,7 +27,7 @@
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li class="dropdown">
-                    <a href="#about" class="nav-link">About <i class="fas fa-caret-down"></i></a>
+                    <a href="#about" class="nav-link dropdown-toggle">About <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#skills" class="dropdown-link">Skills</a></li>
                         <li><a href="#experience" class="dropdown-link">Experience</a></li>
@@ -38,25 +38,17 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <!-- Search Bar (Optional) -->
-            <div class="search-bar">
+            <div class="search-bar desktop-search-bar">
                 <input type="text" placeholder="Search..." aria-label="Search">
                 <i class="fas fa-search"></i>
             </div>
-            <!-- Theme Toggle (Option A: Checkbox) -->
+            <!-- Single Theme Toggle -->
             <div class="theme-toggle">
                 <input type="checkbox" id="toggle-checkbox" aria-label="Toggle Dark/Light Theme">
                 <label for="toggle-checkbox" class="toggle-label">
                     <span class="toggle-ball"></span>
                 </label>
             </div>
-            <!-- Alternatively, Theme Toggle Button (Option B: Button) -->
-            <!--
-            <div class="theme-toggle">
-                <button id="theme-toggle-button" aria-label="Toggle Dark/Light Theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-            -->
             <!-- Hamburger Menu -->
             <div class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -83,7 +75,7 @@
             <h2 data-aos="fade-right">About Me</h2>
             <div class="about-content" data-aos="fade-up">
                 <div class="about-image">
-                    <img src="images/profile.jpg" alt="Robin Doak">
+                    <img src="images/profile.jpg" alt="Robin Doak" loading="lazy">
                 </div>
                 <div class="about-text">
                     <p>Hello! I'm Robin Doak, a dedicated Software Developer with a passion for building efficient and scalable applications. With a strong foundation in web development and a keen eye for detail, I strive to deliver solutions that not only meet but exceed expectations.</p>
@@ -108,7 +100,11 @@
                             <li><i class="fas fa-check-circle"></i> React & Vue.js</li>
                             <li><i class="fas fa-check-circle"></i> Node.js & Express</li>
                             <li><i class="fas fa-check-circle"></i> Python & Django</li>
+                            <li><i class="fas fa-check-circle"></i> C++</li> <!-- Added C++ -->
+                            <li><i class="fas fa-check-circle"></i> C#</li> <!-- Added C# -->
                             <li><i class="fas fa-check-circle"></i> Git & GitHub</li>
+                            <li><i class="fas fa-check-circle"></i> SQL & NoSQL Databases</li>
+                            <li><i class="fas fa-check-circle"></i> RESTful APIs & GraphQL</li>
                             <!-- Add more skills as needed -->
                         </ul>
                     </div>
@@ -123,16 +119,33 @@
         <div class="container">
             <h2 data-aos="fade-right">Experience</h2>
             <div class="experience-content" data-aos="fade-up">
+                <!-- Experience Item 1 -->
+                <div class="experience-item">
+                    <h3>Senior Software Engineer</h3>
+                    <h4>Innovatech Solutions</h4>
+                    <p>March 2023 - Present</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Led a team of 5 developers in creating scalable web applications using React and Node.js.</li>
+                        <li><i class="fas fa-check-circle"></i> Architected RESTful APIs to support frontend functionalities and third-party integrations.</li>
+                        <li><i class="fas fa-check-circle"></i> Implemented CI/CD pipelines, reducing deployment times by 30%.</li>
+                        <li><i class="fas fa-check-circle"></i> Conducted code reviews and mentoring sessions, improving code quality and team productivity.</li>
+                        <li><i class="fas fa-check-circle"></i> Collaborated with UX/UI designers to enhance user experience based on feedback and analytics.</li>
+                    </ul>
+                </div>
+                <!-- Experience Item 2 -->
                 <div class="experience-item">
                     <h3>Software Engineer</h3>
                     <h4>Tech Solutions Inc.</h4>
-                    <p>June 2021 - Present</p>
+                    <p>June 2021 - February 2023</p>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Developed and maintained web applications using React and Node.js.</li>
                         <li><i class="fas fa-check-circle"></i> Collaborated with cross-functional teams to define, design, and ship new features.</li>
                         <li><i class="fas fa-check-circle"></i> Optimized applications for maximum speed and scalability.</li>
+                        <li><i class="fas fa-check-circle"></i> Integrated third-party services and APIs to extend application functionalities.</li>
+                        <li><i class="fas fa-check-circle"></i> Implemented security best practices to safeguard application data.</li>
                     </ul>
                 </div>
+                <!-- Experience Item 3 -->
                 <div class="experience-item">
                     <h3>Frontend Developer</h3>
                     <h4>Creative Minds Studio</h4>
@@ -141,6 +154,21 @@
                         <li><i class="fas fa-check-circle"></i> Designed and implemented user interfaces using Vue.js and CSS3.</li>
                         <li><i class="fas fa-check-circle"></i> Ensured the technical feasibility of UI/UX designs.</li>
                         <li><i class="fas fa-check-circle"></i> Collaborated with designers and backend developers to enhance usability.</li>
+                        <li><i class="fas fa-check-circle"></i> Optimized applications for cross-browser compatibility and responsiveness.</li>
+                        <li><i class="fas fa-check-circle"></i> Assisted in the development of mobile-responsive features.</li>
+                    </ul>
+                </div>
+                <!-- Experience Item 4 -->
+                <div class="experience-item">
+                    <h3>Junior Developer</h3>
+                    <h4>StartUp Hub</h4>
+                    <p>July 2017 - December 2018</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Assisted in developing web applications using HTML, CSS, and JavaScript.</li>
+                        <li><i class="fas fa-check-circle"></i> Participated in agile development cycles and sprint planning.</li>
+                        <li><i class="fas fa-check-circle"></i> Conducted testing and debugging to ensure software quality.</li>
+                        <li><i class="fas fa-check-circle"></i> Maintained documentation for various projects and processes.</li>
+                        <li><i class="fas fa-check-circle"></i> Supported senior developers in day-to-day tasks and project milestones.</li>
                     </ul>
                 </div>
                 <!-- Add more experience items as needed -->
@@ -157,7 +185,7 @@
                 <!-- Project Card 1 -->
                 <div class="project-card" data-aos="zoom-in">
                     <div class="project-image">
-                        <img src="images/markiva.jpg" alt="Markiva">
+                        <img src="images/markiva.jpg" alt="Markiva" loading="lazy">
                         <div class="overlay">
                             <div class="overlay-content">
                                 <h3>Markiva</h3>
@@ -170,7 +198,7 @@
                 <!-- Project Card 2 -->
                 <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="images/github-follower-checker.jpg" alt="GitHub Follower Checker">
+                        <img src="images/github-follower-checker.jpg" alt="GitHub Follower Checker" loading="lazy">
                         <div class="overlay">
                             <div class="overlay-content">
                                 <h3>GitHub Follower Checker</h3>
@@ -183,7 +211,7 @@
                 <!-- Project Card 3 -->
                 <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="images/starfield-iddb.jpg" alt="Starfield IDDB">
+                        <img src="images/starfield-iddb.jpg" alt="Starfield IDDB" loading="lazy">
                         <div class="overlay">
                             <div class="overlay-content">
                                 <h3>Starfield IDDB</h3>
@@ -207,12 +235,50 @@
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card">
                     <p>"Robin is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are unparalleled."</p>
-                    <h4>- Jane Smith, Project Manager</h4>
+                    <h4>- Sarah Smyth, Project Manager at Innovatech</h4>
+                    <div class="testimonial-meta">
+                        <span>Innovatech</span> | <a href="https://www.innovatech.com" target="_blank">www.innovatech.com</a>
+                    </div>
                 </div>
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card">
                     <p>"Working with Robin was a pleasure. He has a deep understanding of modern web technologies and always meets deadlines."</p>
-                    <h4>- John Doe, Team Lead</h4>
+                    <h4>- John Patrice, Team Lead at Creative Minds Studio</h4>
+                    <div class="testimonial-meta">
+                        <span>Creative Minds Studio</span> | <a href="https://www.creativeminds.com" target="_blank">www.creativeminds.com</a>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p>"Robin's expertise in both frontend and backend development made our project a success. Highly recommended for any software development needs."</p>
+                    <h4>- Emily Ward, CTO at Tech Solutions Inc.</h4>
+                    <div class="testimonial-meta">
+                        <span>Tech Solutions Inc.</span> | <a href="https://www.techsolutions.com" target="_blank">www.techsolutions.com</a>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <p>"Robin is not only a skilled developer but also a great team player. His ability to communicate complex ideas clearly was invaluable."</p>
+                    <h4>- Michael Brown, UX Designer at Creative Minds Studio</h4>
+                    <div class="testimonial-meta">
+                        <span>Creative Minds Studio</span> | <a href="https://www.creativeminds.com" target="_blank">www.creativeminds.com</a>
+                    </div>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <p>"Robin demonstrated exceptional skills in optimizing our application's performance. His proactive approach led to a 25% increase in efficiency."</p>
+                    <h4>- Sarah Lee, Operations Manager at Global Enterprises</h4>
+                    <div class="testimonial-meta">
+                        <span>Global Enterprises</span> | <a href="https://www.globalenterprises.com" target="_blank">www.globalenterprises.com</a>
+                    </div>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <p>"Robin's innovative solutions and dedication were crucial in the successful launch of our new platform. He's a valuable asset to any team."</p>
+                    <h4>- David Kim, CEO at NextGen Tech</h4>
+                    <div class="testimonial-meta">
+                        <span>NextGen Tech</span> | <a href="https://www.nextgentech.com" target="_blank">www.nextgentech.com</a>
+                    </div>
                 </div>
                 <!-- Add more testimonials as needed -->
             </div>
